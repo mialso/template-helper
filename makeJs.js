@@ -1,13 +1,14 @@
+require('dotenv').config();
 const path = require('path');
 const fs = require('fs');
 const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
 
 const SNIPPET_JS_NAME = 'embed-snippet.js';
 const CONTROLLER_JS_NAME = 'embed.js';
-const IMGUR_COM_PATH = '../imgur_com';
-const SNIPPET_JS_PATH = path.resolve(IMGUR_COM_PATH, 'html/include/js/', SNIPPET_JS_NAME); 
-const CONTROLLER_JS_PATH = path.resolve(IMGUR_COM_PATH, 'html/include/js/', CONTROLLER_JS_NAME); 
-const POLYFILL_JS_PATH = path.resolve(IMGUR_COM_PATH, 'html/include/js/', 'console-polyfill.js'); 
+const REPO_PATH = process.env.REPO_PATH;
+const SNIPPET_JS_PATH = path.resolve(REPO_PATH, 'html/include/js/', SNIPPET_JS_NAME); 
+const CONTROLLER_JS_PATH = path.resolve(REPO_PATH, 'html/include/js/', CONTROLLER_JS_NAME); 
+const POLYFILL_JS_PATH = path.resolve(REPO_PATH, 'html/include/js/', 'console-polyfill.js'); 
 
 // update snippet js file
 const snippetJs = fs.readFileSync(SNIPPET_JS_PATH).toString();

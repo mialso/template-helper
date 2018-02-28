@@ -1,0 +1,38 @@
+module.exports = {
+    static_url: 'static_url',
+    host: '',
+    cdn_url: '',
+    embed_info: {
+        referer: '',
+        log_analytics: '',
+        context: '',
+        comment_count: '',
+        account_url: '',
+    },
+    image: {
+        hash: '',
+        width: '',
+        height: '',
+    },
+    item: {
+        hash: '',
+        ext: '',
+        animated: '',
+        width: '',
+        height: '',
+        title: '',
+        looping: '',
+        size: '',
+        description: '',
+        views: '',
+    },
+    Imgur: {
+        pluralize: function () { return 'pluralize' },
+        linkify: function () { return 'linkify' },
+    },
+    isset: function () { return true },
+    minify: 'minify',
+    item: function () { return 'item result' },
+    show_poster: function () { return 'show poster' },
+    making_links: function () { return 'making_links' },
+};
